@@ -1,0 +1,10 @@
+Thank you for shopping at Jungle.com. Your order details are listed below. If you have any questions or concerns, don't hesitate to contact us!
+
+Order #<%= @order.id %> Details:
+
+Total Price: <%= humanized_money_with_symbol @order.total_cents%>
+<% @order.line_items.each do |line_item| %>
+product: <%=line_item.product.name %>
+Quantity: <%=line_item.quantity %>
+Price: <%=line_item.product.price %>
+<% end %>

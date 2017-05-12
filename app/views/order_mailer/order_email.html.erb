@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Thank you for shopping at Jungle.com. Your order details are listed below. If you have any questions or concerns, don't hesitate to contact us!</p>
+    <h2>Order #<%= @order.id %> Details</h2>
+    <h2>Total Price: <%= humanized_money_with_symbol @order.total_cents%></h2>
+      <% @order.line_items.each do |line_item| %>
+      <p>product: <%=line_item.product.name %></p>
+      <p>Quantity: <%=line_item.quantity %></p>
+      <p>Price: <%=line_item.product.price %></p>
+    <% end %>
+  </body>
+</html>
