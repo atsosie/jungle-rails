@@ -41,10 +41,10 @@
         </li>
         <% if current_user %>
           <li>Welcome, <%= current_user.first_name %></li>
-          <li><%= link_to "Logout", "/sessions", method: "delete" %></li>
+          <li><%= link_to "Logout", sessions_path, method: "delete" %></li>
         <% else %>
-          <li><%= link_to "Register", "/users/new" %></li>
-          <li><%= link_to "Login", "/sessions/new" %></li>
+          <li><%= link_to "Register", new_users_path %></li>
+          <li><%= link_to "Login", new_sessions_path %></li>
         <% end %>
         <li>
           <%= link_to cart_path do %>
