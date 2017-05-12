@@ -83,7 +83,6 @@ cat1.products.create!({
   price: 224.50
 })
 
-
 cat2.products.create!({
   name:  'Modern Skateboards',
   description: Faker::Hipster.paragraph(4),
@@ -132,5 +131,48 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## USERS
+
+puts "Creating Users ..."
+
+user1 = User.create( first_name: '1', last_name: '1', email: '1@g.com', password: '1', password_confirmation: '1')
+
+user2 = User.create( first_name: '2', last_name: '2', email: '2@g.com', password: '2', password_confirmation: '2')
+
+## REVIEWS
+
+puts "Re-creating Reviews ..."
+
+Review.destroy_all
+
+user1.reviews.create!({
+  product_id: 1,
+  description: "Kickstarter polaroid bitters deep v roof party skateboard. Plaid listicle ugh, VHS vinyl photo booth iPhone fingerstache leggings dreamcatcher.",
+  rating: 1
+})
+
+user1.reviews.create!({
+  product_id: 3,
+  description: "",
+  rating: 5
+})
+
+user2.reviews.create!({
+  product_id: 1,
+  description: "Gluten-free mumblecore sartorial, sriracha celiac hashtag jianbing wolf microdosing pickled retro banh mi tacos poutine.",
+  rating: 3
+})
+
+user2.reviews.create!({
+  product_id: 5,
+  description: "Vegan lo-fi iceland tumeric church-key, thundercats gastropub retro kale chips!",
+  rating: 5
+})
+
+user2.reviews.create!({
+  product_id: 2,
+  description: "Pour-over man braid stumptown coloring book polaroid scenester, hoodie migas food truck drinking vinegar. Tumblr gastropub wolf, live-edge 90's heirloom ennui.",
+  rating: 4
+})
 
 puts "DONE!"
