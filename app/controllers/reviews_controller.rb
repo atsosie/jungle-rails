@@ -18,10 +18,21 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @review = Review.find(params[:id])
+    @product = Product.find(@review.product_id)
+
+    if @review.destroy
+      redirect_to product_path(@product)
+    else
+      redirect_to :root #***fix this to show current page + error msg
+    end
+  end
+
   private
 
   def set_review
-    @review = Review.find(params[:review_id])
+    @review = Review.find(params[:id])
   end
 
   def review_params
