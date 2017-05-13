@@ -135,9 +135,9 @@ cat3.products.create!({
 
 puts "Creating Users ..."
 
-user1 = User.create( first_name: '1', last_name: '1', email: '1@g.com', password: '1', password_confirmation: '1')
+user1 = User.create( first_name: 'Pam', last_name: 'Poovey', email: 'poovey@example.com', password: 'test1', password_confirmation: 'test1')
 
-user2 = User.create( first_name: '2', last_name: '2', email: '2@g.com', password: '2', password_confirmation: '2')
+user2 = User.create( first_name: 'Cyril', last_name: 'Figgis', email: 'cfiggis@example.com', password: 'test2', password_confirmation: 'test2')
 
 ## REVIEWS
 
