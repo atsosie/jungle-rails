@@ -6,9 +6,6 @@ class Review < ActiveRecord::Base
   validates :product_id, presence: true
   validates :user_id, presence: true
   validates :rating, presence: true
-
-  def create
-    @review = Review.new(review.params)
-  end
+  validates :description, presence: true
 
 end

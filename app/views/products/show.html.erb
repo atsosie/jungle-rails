@@ -25,14 +25,14 @@
         </dl>
         <hr>
         <h4>Add a Review</h4>
-        <%= form_for([@product, @product.reviews.build]) do |form| %>
+        <%= form_for([@product, @review]) do |form| %>
           <div class="field">
             <%= form.label :rating %><br />
-            <%= form.select(:rating, options_for_select([1, 2, 3, 4, 5])) %>
+            <%= form.select :rating, options_for_select([1, 2, 3, 4, 5]) %>
           </div>
           <div class="field">
             <%= form.label :description %><br />
-            <%= form.text_area :description, id: :review_description %>
+            <%= form.text_area :description %>
           </div>
           <div class="actions">
             <%= form.submit %>
