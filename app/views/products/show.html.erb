@@ -24,6 +24,20 @@
           <dd><%= @product.price %></dd>
         </dl>
         <hr>
+        <h4>Add a Review</h4>
+        <%= form_for([@product, @product.reviews.build]) do |form| %>
+          <div class="field">
+            <%= form.label :rating %><br />
+            <%= form.select(:rating, options_for_select([1, 2, 3, 4, 5])) %>
+          </div>
+          <div class="field">
+            <%= form.label :description %><br />
+            <%= form.text_area :description, id: :review_description %>
+          </div>
+          <div class="actions">
+            <%= form.submit %>
+          </div>
+        <% end %>
         <h4>Reviews</h4>
         <% if @product.reviews.blank? %>
           <p>No reviews for this product.</p>
