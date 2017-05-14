@@ -79,11 +79,29 @@ main section.categories-show {
 
 main section.products-show {
 
+  .buffer-top {
+    margin-top: 50px;
+  }
+
   .product-detail {
     img.main-img {
       max-width: 100%;
     }
   }
+
+  .review {
+    align-self: flex-end;
+    flex-basis: 50%;
+  }
+  .review-header {
+    display:         flex;
+    flex-direction:  row;
+    flex-wrap:       nowrap;
+    justify-content: space-between;
+  }
+
+  div.review-header {
+    font-size: 2em;
+  }
+
 }
-
-
