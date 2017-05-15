@@ -13,6 +13,15 @@
 
       <div class="col-sm-8">
         <dl class="dl-horizontal">
+          <dt>Rating</dt>
+          <dd>
+            <% if @product.reviews.average(:rating).blank? %>
+              Not Yet Rated
+            <%else%>
+              <%= rating_as_stars @product.reviews.average(:rating) %>
+            <%end%>
+          </dd
+          </dh>
           <dt>Name</dt>
           <dd><%= @product.name %></dd>
           <dt>Description</dt>
