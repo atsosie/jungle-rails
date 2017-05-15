@@ -33,3 +33,14 @@ $gray-medium-light: #eaeaea;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+#{$a-tags} {
+  color: 3392DD;
+  text-decoration: none;
+}
+#{$a-tags-hover} {
+  color: 204d74;
+}
